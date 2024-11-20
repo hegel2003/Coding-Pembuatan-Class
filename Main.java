@@ -1,15 +1,24 @@
 package src;
 
-
 public class Main {
     public static void main(String[] args) {
-        Makanan makanan1 = new Makanan("Nasi Goreng", 15000);
-        Voucher voucher1 = new Voucher("2024-01-01", "2024-01-31", 5000);
-        ItemPesanan itemPesanan1 = new ItemPesanan(makanan1, 2, voucher1);
+       
+        Makanan ayam = new Makanan("Ayam Goreng", 25000);
+        Makanan nasi = new Makanan("Nasi Putih", 5000);
 
+       
+        DiskonVoucher voucherDiskon = new DiskonVoucher("2024-11-01", "2024-11-30", 10000);
+
+        
+        ItemPesanan item1 = new ItemPesanan(ayam, 2, voucherDiskon);
+        ItemPesanan item2 = new ItemPesanan(nasi, 3, null);
+
+        
         ResiPesanan resi = new ResiPesanan();
-        resi.addItemPesanan(itemPesanan1);
+        resi.addItemPesanan(item1);
+        resi.addItemPesanan(item2);
 
+        
         resi.printResi();
     }
 }
