@@ -22,8 +22,11 @@ class ResiPesanan {
             System.out.println("Makanan: " + item.getMakanan().getNama());
             System.out.println("Harga: " + item.getMakanan().getHarga());
             System.out.println("Jumlah Pembelian: " + item.getJmlPembelian());
+            
             if (item.getVoucher() != null) {
-                item.getVoucher().displayInfo();
+                item.getVoucher().displayInfo(); 
+            } else {
+                System.out.println("Voucher: Tidak ada voucher.");
             }
             System.out.println();
         }
