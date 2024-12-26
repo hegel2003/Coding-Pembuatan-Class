@@ -3,7 +3,7 @@ package src;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-class Voucher {
+abstract class Voucher {
     private LocalDate tglMulai;
     private LocalDate tglSelesai;
 
@@ -31,6 +31,9 @@ class Voucher {
         this.tglSelesai = LocalDate.parse(tglSelesai, formatter);
     }
 
+    
+    public abstract void getDetail();
+
     public void displayInfo() {
         System.out.println("Tanggal Mulai Voucher: " + tglMulai);
         System.out.println("Tanggal Selesai Voucher: " + tglSelesai);
@@ -57,5 +60,11 @@ class DiskonVoucher extends Voucher {
     public void displayInfo() {
         super.displayInfo(); 
         System.out.println("Nominal Diskon: " + nominal);
+    }
+
+    @Override
+    public void getDetail() {
+        
+        System.out.println("Tanggal Mulai: " + getTglMulai() + " | Tanggal Selesai: " + getTglSelesai() + " | Nominal Diskon: " + getNominal());
     }
 }
