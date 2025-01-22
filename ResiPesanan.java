@@ -1,5 +1,3 @@
-package src;
-
 import java.util.ArrayList;
 
 class ResiPesanan {
@@ -13,18 +11,19 @@ class ResiPesanan {
         if (dataItemPesanan.size() < 10) {
             dataItemPesanan.add(item);
         } else {
-            System.out.println("Maksimal item pesanan adalah 10.");
+            System.out.println("Maksimal jumlah item pesanan adalah 10.");
         }
     }
 
     public void printResi() {
+        System.out.println("\n--- Resi Pesanan ---");
         for (ItemPesanan item : dataItemPesanan) {
             System.out.println("Makanan: " + item.getMakanan().getNama());
             System.out.println("Harga: " + item.getMakanan().getHarga());
             System.out.println("Jumlah Pembelian: " + item.getJmlPembelian());
             
             if (item.getVoucher() != null) {
-                item.getVoucher().displayInfo(); 
+                item.getVoucher().displayInfo();
             } else {
                 System.out.println("Voucher: Tidak ada voucher.");
             }
