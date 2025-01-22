@@ -1,6 +1,3 @@
-package src;
-
-
 class ItemPesanan {
     private Makanan makanan;
     private int jmlPembelian;
