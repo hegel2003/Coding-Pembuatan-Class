@@ -1,5 +1,3 @@
-package src;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -31,7 +29,6 @@ abstract class Voucher {
         this.tglSelesai = LocalDate.parse(tglSelesai, formatter);
     }
 
-    
     public abstract void getDetail();
 
     public void displayInfo() {
@@ -44,7 +41,7 @@ class DiskonVoucher extends Voucher {
     private int nominal;
 
     public DiskonVoucher(String tglMulai, String tglSelesai, int nominal) {
-        super(tglMulai, tglSelesai); 
+        super(tglMulai, tglSelesai);
         this.nominal = nominal;
     }
 
@@ -58,13 +55,12 @@ class DiskonVoucher extends Voucher {
 
     @Override
     public void displayInfo() {
-        super.displayInfo(); 
+        super.displayInfo();
         System.out.println("Nominal Diskon: " + nominal);
     }
 
     @Override
     public void getDetail() {
-        
         System.out.println("Tanggal Mulai: " + getTglMulai() + " | Tanggal Selesai: " + getTglSelesai() + " | Nominal Diskon: " + getNominal());
     }
 }
