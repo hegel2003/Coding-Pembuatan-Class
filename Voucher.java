@@ -15,26 +15,13 @@ abstract class Voucher {
         return tglMulai;
     }
 
-    public void setTglMulai(String tglMulai) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        this.tglMulai = LocalDate.parse(tglMulai, formatter);
-    }
-
     public LocalDate getTglSelesai() {
         return tglSelesai;
     }
 
-    public void setTglSelesai(String tglSelesai) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        this.tglSelesai = LocalDate.parse(tglSelesai, formatter);
-    }
+    public abstract int getNominal();
 
-    public abstract void getDetail();
-
-    public void displayInfo() {
-        System.out.println("Tanggal Mulai Voucher: " + tglMulai);
-        System.out.println("Tanggal Selesai Voucher: " + tglSelesai);
-    }
+    public abstract void displayInfo();
 }
 
 class DiskonVoucher extends Voucher {
@@ -45,22 +32,15 @@ class DiskonVoucher extends Voucher {
         this.nominal = nominal;
     }
 
+    @Override
     public int getNominal() {
         return nominal;
     }
 
-    public void setNominal(int nominal) {
-        this.nominal = nominal;
-    }
-
     @Override
     public void displayInfo() {
-        super.displayInfo();
-        System.out.println("Nominal Diskon: " + nominal);
-    }
-
-    @Override
-    public void getDetail() {
-        System.out.println("Tanggal Mulai: " + getTglMulai() + " | Tanggal Selesai: " + getTglSelesai() + " | Nominal Diskon: " + getNominal());
+        System.out.println("Tanggal Mulai Voucher: " + getTglMulai());
+        System.out.println("Tanggal Selesai Voucher: " + getTglSelesai());
+        System.out.println("Nominal Diskon: Rp " + nominal);
     }
 }
