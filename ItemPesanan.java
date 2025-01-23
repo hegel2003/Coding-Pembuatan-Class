@@ -1,35 +1,29 @@
 class ItemPesanan {
+    private String namaPengguna;
     private Makanan makanan;
-    private int jmlPembelian;
+    private int jumlahPembelian;
     private Voucher voucher;
 
-    public ItemPesanan(Makanan makanan, int jmlPembelian, Voucher voucher) {
+    public ItemPesanan(String namaPengguna, Makanan makanan, int jumlahPembelian, Voucher voucher) {
+        this.namaPengguna = namaPengguna;
         this.makanan = makanan;
-        this.jmlPembelian = jmlPembelian;
+        this.jumlahPembelian = jumlahPembelian;
         this.voucher = voucher;
+    }
+
+    public String getNamaPengguna() {
+        return namaPengguna;
     }
 
     public Makanan getMakanan() {
         return makanan;
     }
 
-    public void setMakanan(Makanan makanan) {
-        this.makanan = makanan;
-    }
-
-    public int getJmlPembelian() {
-        return jmlPembelian;
-    }
-
-    public void setJmlPembelian(int jmlPembelian) {
-        this.jmlPembelian = jmlPembelian;
+    public int getJumlahPembelian() {
+        return jumlahPembelian;
     }
 
     public Voucher getVoucher() {
         return voucher;
-    }
-
-    public void setVoucher(Voucher voucher) {
-        this.voucher = voucher;
     }
 }
